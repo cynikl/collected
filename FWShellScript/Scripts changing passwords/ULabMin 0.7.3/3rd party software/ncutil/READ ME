@@ -1,0 +1,7 @@
+ncutil is required if you want the scripts to be able to change the network 
+computer name or any other network settings.
+
+If you don't install ncutil, please edit /etc/ulabmin_perl_config.pl and set 
+$ncutil_2 to 0.
+
+iHook is free (see license file for more information).

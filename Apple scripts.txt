@@ -1,0 +1,18 @@
+Apple scripts
+<http://www.macosxautomation.com/applescript/features/system-prefs.html>
+
+-- 
+tell application "System Events"
+ -- SET DESKTOP TO SPECIFIC PICTURE
+ tell current desktop
+ set picture rotation to 0 -- (0=off, 1=interval, 2=login, 3=sleep)
+ set picture to file "Mac OS X:Library:Desktop Pictures:Plants:Agave.jpg"
+ end tell
+end tell
+
+--
+
+-- WE also have the possibility to do this, once set:
+-- sudo cp ~/Library/Preferences/com.apple.desktop.plist /System/Library/User\ Template/Non_localized/Library/Preferences/
+-- 5120 x 2880, 240dpi
+-- 2556x1440

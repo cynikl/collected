@@ -1,0 +1,17 @@
+ULabMin is a collection of scripts, modifications, tools, graphics, etc., that the University of Utah's Student Computing Labs uses on their student Macintosh lab computers.
+
+******** AVOID COMPLETELY REINSTALLING THE OS ********
+
+DON'T JUST INSTALL AND REBOOT!  YOU WILL REGRET IT.
+
+                   !!!!!!!!!!!!!!!!!!! READ THE README !!!!!!!!!!!!!!!!!!!
+
+If you don't read the README, you may have to completely reinstall the OS of this computer if you proceed!
+
+ULabMin TOTALLY messes with the operation of the OS.
+
+DO NOT INSTALL THIS ON A PRODUCTION COMPUTER.
+
+**************************************
+
+http://www.macos.utah.edu/ulabmin/

@@ -1,0 +1,50 @@
+ULabMin Extra Graphics (last updated 2004.09.14)
+
+You probably want to change all of the logos in these files...
+
+-------------------------------------------------------------------------------------
+
+BootPanel.psd
+
+BootPanel needs to be saved as a PDF.  It should not be transparent.  Save the file to:
+
+	/System/Library/CoreServices/SystemStarter/QuartzDisplay.bundle/Resources/BootPanel.pdf
+
+-------------------------------------------------------------------------------------
+
+loginpanel_10.3.x.psd
+
+The login window graphic needs to be saved as a transperent tif file that has no layers.  It needs to be transparent (where you want the background to show--hide the "Backgrounds" layer folder before saving the file as tif, and don't save layers).  Save the file to:
+
+	/System/Library/CoreServices/SecurityAgent.app/Contents/Resources/applelogo.tif
+
+You must use the ULabMin version of the login window nib because it modifies the size of the "applelogo.tif" graphic.  Apple's default size is very small.  See:
+
+/System/Library/CoreServices/SecurityAgentPlugins/loginwindow.bundle/Contents/Resources/English.lproj/login.nib
+
+You can, of course, modify ULabMin's nib with Interface Builder.  Inside of login.nib is a file objects.nib.  You must copy this file to:
+
+/etc/ulabmin/objects.nib
+
+-------------------------------------------------------------------------------------
+
+performing_maintenance.psd
+
+This file is for iHook and Radmind.  Save as gif.  It has 5 layer folders named Step1, Step2, Step3, Step4, and Step5.  Only show one at a time when saving it as gif.  It needs to be transparent (where you want the background to show--hide the "Background" layer folder before saving the file as tif).
+
+This graphic file requires a modified iHook nib, which is included with in the "3rd party applications" folder.
+
+Put the files at /Library/ULabMin/Private/resources named
+	performing_maintenance1.gif
+	performing_maintenance2.gif
+	performing_maintenance3.gif
+	performing_maintenance4.gif
+	performing_maintenance5.gif
+
+-------------------------------------------------------------------------------------
+
+Desktop.jpg
+
+You must set the user prefs to use this file.
+
+Get the original PSD (it is too big to include in this file) at http://www.macos.utah.edu/documentation/ulabmin/graphics

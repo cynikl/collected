@@ -1,0 +1,11 @@
+The Prefpane for 10.3.zip is the Menuversum prefpane that has been updated for 
+10.3.  Note, the prefpane still doesn't work in System Preferences, inside of 
+the prefpane are files that Menuversum uses, so this update is required.
+
+If you don't install Menuversum, please edit /etc/ulabmin_perl_config.pl and set 
+$enable_menuversum to 0.
+
+Menuversum is included in the same folder as this readme because the developer 
+has removed it off of his website--but he plans on updating it.
+
+Menuversum is free (see included license file for more information).

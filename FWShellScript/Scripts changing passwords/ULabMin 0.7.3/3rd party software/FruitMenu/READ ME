@@ -1,0 +1,13 @@
+Use FruitMenu to modify the Apple Menu.  We use FruitMenu to remove "Logout" 
+from kiosks.  We also use it on our lab computers to use our own Logout app 
+rather than the system's.
+
+Application Enhancer is required if you use FruitMenu.
+
+None of the scripts require FruitMenu.
+
+It is really nice to create a FruitMenu Items folder with aliases to common 
+software.  Use the Fruitmenu Preference Pane to do that.
+
+FruitMenu IS NOT FREE (it has a demo mode that goes into "expired" mode after a 
+period of time).  It costs about $10 per license.

@@ -1,0 +1,16 @@
+Title ULabMin
+Version 0.7.3
+Description A collection of scripts, modifications, tools, graphics, etc., that the University of Utah's Student Computing Labs uses on their student Macintosh lab computers.
+DefaultLocation /
+DeleteWarning 
+
+### Package Flags
+
+NeedsAuthorization YES
+Required NO
+Relocatable NO
+RequiresReboot NO
+UseUserMask NO
+OverwritePermissions NO
+InstallFat NO
+RootVolumeOnly NO

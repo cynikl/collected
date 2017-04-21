@@ -1,0 +1,15 @@
+Radmind is what we recommend you use to update your computers.  It allows you to 
+quickly (well, once you have learned how to use it) push out updates to 
+computers, which is ABSOLUTELY REQUIRED if you want a safe lab, especially 
+considering that there have been several security vulnerabilities discovered in Mac OS X that required a quick update.
+
+In other words, we don't think ASR is not a good solution for doing updates (but 
+is great for initial installation...).
+
+If you don't install radmind edit the file ulabmin_perl_config.pl and change 
+$radmind_master to "".
+
+Install iHook if you install radmind or else none of the radmind features will 
+work right.
+
+Radmind is free (see license file for more information).

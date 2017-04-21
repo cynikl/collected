@@ -1,0 +1,17 @@
+Inside of the iHook-app folder is the modifications we have made to iHook.  You 
+will need to use those if you intend to use the images for iHook we have created 
+that are located at:
+
+/Library/ULabMin/Private/resources/performing_maintenance1.gif
+/Library/ULabMin/Private/resources/performing_maintenance2.gif
+/Library/ULabMin/Private/resources/performing_maintenance3.gif
+/Library/ULabMin/Private/resources/performing_maintenance4.gif
+/Library/ULabMin/Private/resources/performing_maintenance5.gif
+
+If you plan on using radmind, install iHook or else some radmind stuff wont work 
+right.  iHook isn't used for any thing other than radmind in ULabMin (but it 
+might be added to the startup item in the future, especially in 10.4).
+
+Install iHook in /Library/ULabMin/Private/tools/
+
+iHook is free (see included license file for more information).

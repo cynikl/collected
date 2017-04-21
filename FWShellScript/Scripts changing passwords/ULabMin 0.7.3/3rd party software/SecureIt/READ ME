@@ -1,0 +1,9 @@
+SecureIt replaces the file /etc/rc.boot.  ULabMin's "Extra Security" files also 
+replace this file.  Use the ULabMin version, not SecureIt's.
+
+To do that, you will need to keep a copy of the ULabMin version, remove the 
+version that SecureIt creates, and move the ULabMin version back after 
+installing SecureIt.  Or you can just install SecureIt before installing 
+ULabMin.
+
+SecureIt is free (see license file for more information).

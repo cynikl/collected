@@ -1,0 +1,100 @@
+ULabMin Extra Security (last updated 2005.02.24)
+
+Mac OS X is secure.  However, there is some question about local security, that is, protecting from a malicous user sitting at the keyboard.  So no need to be overly confident in Mac OS X's security.  Here are some system modifications that make Mac OS X even MORE secure.
+
+The idea with these changes is that if a user does crack the computer, they will not be aware that access lists are enabled (because they aren't by default), and if they turn on ssh, they will go home and try to connect, only to find out their subnet isn't on the allow list.  That sorta thing.  If they are aware of ULabMin, well, that would suck.
+
+The files are installed by default (except /etc/sudoers), but don't HAVE to be.  Backups are created, if you don't want ULabMin's versions, you can revert to the "*.old" versions.
+
+--------------------------------------------------------------------------------
+
+Custom Firewall
+
+This is installed by default, but in /etc/ulabmin/ulabmin_global_settings.sh, the firewall is turned off.  It is off by default because you need to enter your subnet info into the file /etc/ulabmin/rc.firewall before enabling it, or else you will not have remote access to your computer! (by default... bad)
+
+--------------------------------------------------------------------------------
+
+TCP-Wrappers
+
+The following file needs your network subnets entered.
+
+/etc/hosts.allow
+
+Don't modify the following file (it must exist if you want to use TCP-Wrappers).
+
+/etc/hosts.deny
+
+Please see:
+
+http://www.macos.utah.edu/Documentation/macosx/security/tcpwrappers.html
+
+You should make sure the owners and groups of these files are root:wheel and the modes are 644.  You can set the files to those permissions with these commands:
+
+sudo chown root:wheel /etc/hosts.allow
+sudo chown root:wheel /etc/hosts.deny
+sudo chmod 644 /etc/hosts.allow
+sudo chmod 644 /etc/hosts.deny
+
+--------------------------------------------------------------------------------
+
+SSHD Protocol 2 and access list
+
+The only thing you need to edit in the following file is the last entry "AllowUsers".  Change it to your admin username and any other users you want to allow ssh access.
+
+/etc/sshd_config
+
+You should make sure the owner and group of this file is root:wheel and the mode is 644.  You can set the file to those permissions with these commands:
+
+sudo chown root:wheel /etc/sshd_config
+sudo chmod 644 /etc/sshd_config
+
+--------------------------------------------------------------------------------
+
+Sudoers
+
+You might want to make your computers harder to compromise by removing the admin group from the sudoers list.  Change "%admin" to your admin username.  This is to stop what I consider an easy hack, which is simply creating a new admin user.  The easy hack is possible if a user gets root access for a few seconds, like if the admin runs sudo, and then steps away from the computer, or if the admin doesn't lock the accounts Pane and logs in as admin.  But by no means is it any more than an itch to someone has root access for a long amount of time and knows what they are doing.
+
+/etc/sudoers
+
+IMPORTANT: When modifying this file, you MUST makes sure the owner and group of this file is root:wheel and the mode to 440.  If it is not this, then the sudo command will not run and you will not have root access (you would need to boot to single user mode or another disk).  These commands will make sure it is the proper permissions:
+
+sudo -s
+<modify file>
+chown root:wheel /path/to/file/sudoers
+chmod 440 /path/to/file/sudoers
+
+You should run "sudo -s" and open a root shell before actually doing anything (since if /etc/sudoers is missing, sudo will not work--so run sudo -s before messing with the file).
+
+You are suppose to use visudo to edit /etc/sudoers, but I don't want to explain how to use visudo and I haven't had any problems using BBEdit.
+
+--------------------------------------------------------------------------------
+
+Single User mode, a few other things
+
+These files don't need to be configured by editing them, but the modifications are controlled by switches in /etc/ulabmin/ulabmin_shell_config.sh.
+
+/etc/rc
+/etc/rc.boot
+/etc/rc.cleanup
+
+You should make sure the owners and groups of these files are root:wheel and the modes are 444.  You can set the files to those permissions with these commands:
+
+sudo chown root:wheel /etc/rc
+sudo chown root:wheel /etc/rc.boot
+sudo chown root:wheel /etc/rc.cleanup
+sudo chmod 444 /etc/rc
+sudo chmod 444 /etc/rc.boot
+sudo chmod 444 /etc/rc.cleanup
+
+--------------------------------------------------------------------------------
+
+Disable >console
+
+The /etc/ttys file does not need to be modified, but there is one change we do make to it.  Compare it to the original to see it.
+
+You should make sure the owners and groups of these files are root:wheel and the modes are 644.  You can set the files to those permissions with these commands:
+
+sudo chown root:wheel /etc/ttys
+sudo chmod 644 /etc/ttys
+
+--------------------------------------------------------------------------------

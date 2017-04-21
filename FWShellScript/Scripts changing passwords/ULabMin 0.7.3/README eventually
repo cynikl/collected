@@ -1,0 +1,149 @@
+ULabMin Detailed Configuration (last updated 2004.09.14)
+
+------------------------------------------------------------------------
+2005.02.24 comment: Sorry for not updating this file (it would take a ton of time
+and I don't have that time right now....).  This file still refers to the old way
+of configuring settings, but still applies to new settings.  The big difference
+is the location of the settings are all moved to /etc/ulabmin_global_config.pl,
+and to customize something for a particular computer configuration, you have to
+call a subroutine in /etc/ulabmin_machine_config.pl.
+------------------------------------------------------------------------
+
+This file goes through a step by step configuration description.
+
+********************************************************************************
+
+Note, ULabMin installs OFF by default.  To enable it:
+
+Open the file /etc/ulabmin/ulabmin_global_config.sh and change
+
+ULABMIN_ENABLED=0
+
+to
+
+ULABMIN_ENABLED=1
+
+By doing this, ULabMin's startup item will execute.  This startup item will create the file /Library/Preferences/com.apple.loginwindow.plist and add the login and logout hooks, and other stuff.  The startup item will also launch the idlescript.
+
+********************************************************************************
+
+Also, the trigger file /Library/ULabMin/Private/triggerfiles/radmind_finished is installed by default because if it isn't, the moment you restart the computer after enabling ULabMin, if you don't want radmind to run, well, it will run.  So this is a safety precaution for you.  But if you are using radmind, you don't want this file to be in any of your overloads!  So be sure to remove it each time you create an overload of ULabMin.
+
+********************************************************************************
+
+Are all of your users going to use a home folder that is cleaned up at every login?
+
+-------------------------
+
+YES:
+
+This is how you create a basic template home folder.
+
+- Login as admin.
+- Open System Preferences -> Accounts and create an account if you haven't already.
+- Edit /etc/ulabmin/ulabmin_global_settings.pl and set $login_assimilate_home_folders_switch to 0 if you have ULabMin installed.
+- Edit /etc/ulabmin/ulabmin_global_settings.pl and set $kioskusername $adminusername $maintenanceusername $enduser_group $kioskUserHomeFolder $authenticatedUserHomeFolder $adminUserHomeFolder $template_homefolder if you haven't already.
+- Logout
+- Login as new user
+
+	- Delete Sites and Public from template folder
+	- Setup Dock how you like it
+	- Launch iChat, setup prefs
+	- Launch iTunes, accept agreement
+	- Launch QuickTime, set connection speed
+	- Launch Safari, set default webpage, turn off autofill, turn on tabs, block popups, etc
+	- Launch System Prefs, set up stuff (Do NOT turn on Screen Saver and "Require password to wake this computer from sleep or screen saver" unless you know what you are getting into--especially if you use remote authentication)
+	- Set Finder prefs (default window view and location, etc)
+	- Perhaps set the printer.  The default printer file is located at ~/.lpoptions, so if that file is missing the default printer will be an unknown.
+	- Launch all 3rd party apps and configure settings
+	- EMPTY TRASH, CLOSE FINDER WINDOWS
+
+- Logout
+- Login as admin
+- Move that new home folder to /Library/ULabMin/Private/home_folder_template, like so:
+	/Library/ULabMin/Private/home_folder_template/Desktop
+	/Library/ULabMin/Private/home_folder_template/Documents
+	etc
+
+You can use the Finder to copy/move the home folder, or you can use:
+
+sudo ditto -rsrc /Users/username /Library/ULabMin/Private/home_folder_template
+
+- Edit /etc/ulabmin/ulabmin_global_settings.pl and set $login_assimilate_home_folders_switch to 1 (or install ULabMin if you haven't already).
+- Make sure /etc/ulabmin/ulabmin_machine_config.pl has $this_computer_is_a_lab_computer set to 1 (even if it is going to be a kiosk or presentation computer, it is easier to debug as a lab computer because you get the Finder as a lab computer).
+- Delete all folders in /Library/ULabMin/Private/home_folder_cache
+
+- Logout
+- Login as new user.
+	- Make as many changes as possible (add new folders, move dock, etc etc -- these changes should not be permenent)
+- Logout
+- Login as new user
+	- Changes should be undone.
+
+If you are using Directory Services, you should probably go to System Preferences and delete the user you created.  You could leave it I suppose...
+
+-------------------------
+
+NO:
+
+- Set $login_assimilate_home_folders_switch to 0.
+
+********************************************************************************
+
+Authentication:
+
+And if you are going to assimilate home folders
+
+And if you are using Directory Services (LDAP, AD):
+
+Set $authenticatedUserHomeFolder in /etc/ulabmin/ulabmin_global_settings.pl to the path to the home folder you want users to use (/Users/labuser).  In Directory Access, you must map NFSHomeFolder to the same path (preceed it with a # sign to do static mapping, like this "#/Users/labuser").
+
+If you aren't using Directory Services, Set $authenticatedUserHomeFolder in /etc/ulabmin/ulabmin_global_settings.pl to the path to the home folder for your users as is found in NetInfo.  I can't imagine how this would work, because this folder needs to be the same.  These scripts don't allow multiple users to have home folders with different names.  But maybe you have several users on the computer and they all share the same home folder...?  See the autologin section below.
+
+Edit /etc/ulabmin/ulabmin_machine_config.pl and set $this_computer_is_authenticated to 1.
+
+Add alias from /Library/ULabMin/Public/Logout to users' desktop.  Replace Apple Menu's Logout with a FruitMenu item that points to /Library/ULabMin/Public/Logout. 
+
+-------------------------
+
+Autologin:
+
+If you have local NetInfo users (like on an autologin kiosk, presentation computer, or you can have an autologin lab computer, but we haven't tested this configuration), if you want them all to have the same files (which is what we do), you need to open NetInfo Manager and change /users/<username>/home to the path of the home folder.  It is best if all home folders have the same path if you are going to manage prefs because some applications use absolute paths in their config files, and if all your home folders have the same path, you don't have multiple paths to worry about.
+
+You must open System Preferences, Accounts -> Login Options and set the Autologin user.  This generates the file /etc/kcpassword, which is required for autologin.
+
+Edit /etc/ulabmin/ulabmin_machine_config.pl and set $this_computer_is_authenticated to 0.
+
+********************************************************************************
+
+-------------------------
+
+Are you using radmind?
+
+YES:
+
+  Set the $radmind_master in /etc/ulabmin/ulabmin_global_settings.pl to the url of the radmind server you use.
+
+  Install iHook (in "3rd party software in /Library/ULabMin/Private/tools/
+
+	Create a "radmind" user.  Set it's limitations to max (do not make it admin).  Delete it's home folder.
+	(if you turn ssh on, make sure you add AllowUsers to /etc/sshd_config and DON'T list the radmind user)
+
+NO:
+  
+  Set $radmind_master_server to ""
+  Turn off maintenance notification (menuversum and loginpanel)
+  Modify the LoginPane... with Interface Builder.
+  	/System/Library/CoreServices/SecurityAgentPlugins/loginwindow.bundle/Contents/Resources/English.lproj/login.nib
+
+Make sure /Library/ULabMin/Private/triggerfiles/radmind_finished is not in ANY of your radmind overloads.  This file MUST not appear in any.  The scripts create and delete this file.
+
+********************************************************************************
+
+Additional stuff
+
+You can hide particular System Preference panes from normal users by chmod w-rx Panes in /System/Library/PreferencePanes (to allow admin access, change the group: chgrp admin *)
+
+********************************************************************************
+
+This file is woefully unfinished, but should get you started.

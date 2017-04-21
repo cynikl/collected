@@ -1,0 +1,20 @@
+To install Screen Preserver, just drag Screen Preserver to 
+
+/Library/ULabMin/Private/tools/
+
+Images for Screen Preserver go inside of it:
+
+Screen Preserver.app/Contents/Resources/Pictures/
+
+You will need to create the Pictures folder.  If you just want a black screen, 
+just create a 1024 x 768 black image.  If you want it to cycle through images, 
+create lots of 1024 x 768 images.  There is no point making images bigger unless 
+you disable these 2 resolution settings found in /etc/ulabmin_perl_config.pl:
+
+$startup_setdisplay_resolution_switch
+$logout_setdisplay_resolution_switch
+
+If these 2 settings are enabled, when the computer is logged out (which is when 
+Screen Preserver runs), it will always be 1024 x 768.
+
+Screen Preserver is free (see included license file for more information).

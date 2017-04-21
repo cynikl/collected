@@ -1,0 +1,6 @@
+The version of updateByHostPrefs that is part of ULabMin is older than what is 
+on Leon Towns-von Stauber's website.  We  have modified this script to take a 
+path instead of a username.
+
+See included license file for more info.  The actual script is located at 
+/Library/ULabMin/Private/scrips/updateByHostPrefs.sh.

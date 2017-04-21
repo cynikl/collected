@@ -1,0 +1,3 @@
+hping2 is used to check to see if the radmind server is actually answering on 
+port 6662.  This is just a little precaution so that all of the radmind steps 
+are executed if the server is down.

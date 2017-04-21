@@ -1,0 +1,67 @@
+#!/bin/sh
+
+ulabmin_folder=/etc/ulabmin
+ulabmin_old=${ulabmin_folder}/old
+
+if [ -e $ulabmin_folder ]; then
+  mv $ulabmin_folder /etc/ulabmin.old
+  mkdir -p $ulabmin_old/etc
+  mv /etc/ulabmin.old $ulabmin_old/etc/ulabmin
+fi
+
+move_list=(
+  "/Library/Application Support/Menuversum"
+  /Library/StartupItems/Firewall
+  /Library/StartupItems/ULabMin
+  /Library/ULabMin
+  /usr/local/bin/create_overload
+  /usr/local/bin/create_printer_overload
+  /usr/local/bin/download_overload.pl
+  /usr/local/bin/prep_for_overload
+  /usr/local/bin/upload_overload
+)
+
+for i in ${move_list[@]}
+do
+  if [ -e "$i" ]; then
+    mypath=`dirname "$i"`
+    if [ ! -e "${ulabmin_old}${mypath}" ]; then
+      mkdir -p "${ulabmin_old}${mypath}"
+    fi
+    mv "$i" "${ulabmin_old}${i}"
+  fi
+done
+
+ditto_list=(
+  /etc/crontab
+  /etc/hostconfig
+  /etc/hosts.allow
+  /etc/hosts.deny
+  /etc/rc
+  /etc/rc.boot
+  /etc/rc.cleanup
+  /etc/sshd_config
+  /etc/sudoers
+  /etc/ttys
+  /Library/Logs/panic.log
+  /Library/Preferences/com.apple.dockfixup.plist
+  /Library/Preferences/com.apple.loginwindow.plist
+  /Library/Preferences/com.apple.RemoteDesktop.plist
+  /Library/Preferences/com.apple.windowserver.plist
+  /Library/Preferences/loginwindow.plist
+  /Library/Preferences/SystemConfiguration/preferences.plist
+  /System/Library/StartupItems/LoginWindow/StartupParameters.plist
+  /System/Library/CoreServices/SecurityAgent.app/Contents/Resources/MacOSXart.tif
+  /System/Library/CoreServices/SecurityAgentPlugins/loginwindow.bundle/Contents/Resources/English.lproj/login.nib/objects.nib
+)
+
+for i in ${ditto_list[@]}
+do
+  if [ -e "$i" ]; then
+    mypath=`dirname "$i"`
+    if [ ! -e "${ulabmin_old}${mypath}" ]; then
+      mkdir -p "${ulabmin_old}${mypath}"
+    fi
+    ditto -rsrc "$i" "${ulabmin_old}${i}"
+  fi
+done
