@@ -69,16 +69,16 @@ export letsencrypt="TRUE"									# Set this to TRUE if you are going to use Let
 export sslTESTMODE="TRUE"									# Set this to FALSE when you're confident it's generating proper certs for you
 export httpsredirect="FALSE"								# Set this to TRUE if you want your JSS to appear to be on port 443 using HTTPS
 export ssldomain="art-deploy.ch"							# Domain name for the SSL certificates
-export sslemail="cyril.niklaus at artcomputer.ch"				# E-mail address for the SSL CA
-export sslkeypass="1ZqPt32-m"								# Password to the keystore. Default is "changeit". Please change it!
-export srcstorepass="1ZqPt32/m0" 
+export sslemail="cyril.niklaus at company.com"				# E-mail address for the SSL CA
+export sslkeypass="changeit"								# Password to the keystore. Default is "changeit". Please change it!
+export srcstorepass="changeit" 
 
 export mysqluser="root"										# MySQL root account
-export mysqlpw="1ZqPt32/m0"									# MySQL root account password. Please change it!
+export mysqlpw="changeit"									# MySQL root account password. Please change it!
 export mysqlserveraddress="localhost" 						# IP/Hostname of MySQL server. Default is local server.
 
 export dbuser="root"								# Database username for JSS
-export dbpass="1ZqPt32/m0"									# Database password for JSS. Default is "changeit". Please change it!
+export dbpass="changeit"									# Database password for JSS. Default is "changeit". Please change it!
 
 # These variables should not be tampered with or script functionality will be affected!
 
