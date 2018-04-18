@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # A simple example of continue with a numerical argument.
 # This code prompts you with the letter "a", "b", or "c",

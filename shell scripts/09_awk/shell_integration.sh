@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Store the output in a variable.
 OUTPUT="$(awk 'BEGIN { \

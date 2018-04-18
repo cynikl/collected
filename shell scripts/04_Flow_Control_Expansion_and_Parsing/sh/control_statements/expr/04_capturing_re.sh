@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Print the four characters prior to "est" if the string matches, else 0.
 

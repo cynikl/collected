@@ -1,4 +1,4 @@
-#!/bin/sh 
+#!/bin/bash 
 
 #the name of the printer will be showed in the printers list
 printername="Accolade_SurePDF";

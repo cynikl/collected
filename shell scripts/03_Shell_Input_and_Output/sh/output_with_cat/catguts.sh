@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 cat > mycprogram.c << EOF
 #include <stdio.h>

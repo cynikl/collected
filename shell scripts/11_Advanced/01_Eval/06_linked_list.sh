@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 VAR1_VALUE="7"
 VAR1_NEXT="VAR2"

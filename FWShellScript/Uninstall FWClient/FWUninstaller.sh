@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ##9.26.08
 ##Kills the client, removes all FileWave software (including the catalog and anything inactive)

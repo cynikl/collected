@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 export FOO_1_1=1
 export FOO_1_2=0

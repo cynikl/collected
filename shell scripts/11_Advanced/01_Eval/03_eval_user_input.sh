@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 echo "Enter variable name and value separated by a space"
 read VARIABLE VALUE
 echo Assigning the value $VALUE to variable $VARIABLE

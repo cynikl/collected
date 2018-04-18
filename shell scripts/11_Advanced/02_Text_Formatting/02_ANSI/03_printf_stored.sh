@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ESC=`printf "\e"`	# store an escape character
                         # into the variable ESC

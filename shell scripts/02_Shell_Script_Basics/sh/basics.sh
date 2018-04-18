@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 VARIABLE="Silly"
 if [ "x$VARIABLE" = "xSilly" ] ; then

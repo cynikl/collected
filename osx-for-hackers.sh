@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Alot of these configs have been taken from the various places
 # on the web, most from here

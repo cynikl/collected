@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 trap "" SIGINT
 
 echo "This program will sleep for 10 seconds and cannot be killed with"

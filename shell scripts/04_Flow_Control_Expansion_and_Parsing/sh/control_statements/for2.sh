@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 for i in a b c\ d ; do
     echo $i
 done

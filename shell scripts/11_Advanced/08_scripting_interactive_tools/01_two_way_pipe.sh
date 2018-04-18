@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Create two FIFOs (named pipes)
 INFIFO="/tmp/infifo.$$"

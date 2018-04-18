@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 echo # Start on a new line
 printf "\e[19D" # move right 19 columns to column 20
 printf "\e[3g" # clear all tab stops

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 GPA="3.885"
 

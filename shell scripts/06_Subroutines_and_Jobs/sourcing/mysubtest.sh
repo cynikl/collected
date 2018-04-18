@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 MYVAR=4
 source mysub.sh
 echo "MYVAR INITIALLY $MYVAR"

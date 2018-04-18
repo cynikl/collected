@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 COUNTER=0
 VALUE="-1"

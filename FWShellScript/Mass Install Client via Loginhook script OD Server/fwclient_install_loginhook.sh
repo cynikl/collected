@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 MYGATEWAY="$(netstat -nr | grep default | awk '{ print $2 }')"
 

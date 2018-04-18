@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ONE_SECOND=1000
 

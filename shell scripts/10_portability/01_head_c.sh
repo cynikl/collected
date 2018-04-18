@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Usage: ./head_c filename bytecount
 FILENAME=$1

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ulabmin_folder=/etc/ulabmin
 ulabmin_old=${ulabmin_folder}/old

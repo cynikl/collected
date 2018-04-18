@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ## Save this as ipc2.sh
 

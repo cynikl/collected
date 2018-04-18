@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # This is a handy way to find out the absolute path of the current script.
 SCRIPT="$(which $0)"

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Print the shell variables for terminal size information.
 

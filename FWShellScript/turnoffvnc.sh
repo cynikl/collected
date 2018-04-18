@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # script to keep computers from showing up in screen sharing
 

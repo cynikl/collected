@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Convert an int to an octal value.
 function inttooct()

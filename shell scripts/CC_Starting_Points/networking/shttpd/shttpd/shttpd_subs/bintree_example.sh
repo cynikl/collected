@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Tell the binary tree library to not run its tests.
 DISABLE_TESTS=true

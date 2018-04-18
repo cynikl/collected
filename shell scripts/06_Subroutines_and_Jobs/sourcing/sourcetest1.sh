@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Save as sourcetest1.sh
 MYVAR=3
 source sourcetest2.sh

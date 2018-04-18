@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # script to stop and start Filewave Scanner for Scanner version 9.0.x
 

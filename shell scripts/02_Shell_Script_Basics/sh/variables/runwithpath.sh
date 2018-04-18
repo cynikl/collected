@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 GLOBAL_PATH="$PATH"
 PATH=/usr/local/bin
 

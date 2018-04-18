@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ##BETA Script to change Owner of AD users
 ##This script requires the Fileset 'Change DesktopOwner by login' to be first deployed
 ##This script has to be deployed with FileWave to /Users/.

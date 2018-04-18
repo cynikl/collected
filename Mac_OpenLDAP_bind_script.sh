@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # rtrouton's Mac_OpenLDAP_bind_script.sh
 # taken frmo his Github.
 # Determine OS version

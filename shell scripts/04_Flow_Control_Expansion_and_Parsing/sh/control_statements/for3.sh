@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 IFS=":"
 LIST="a:b:c d"

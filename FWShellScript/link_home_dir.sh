@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # This Script will create a link for a given user account home dir
 # from /User to an arbitrary dir

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 SECONDS_TO_RUN=5
 SECONDS_TO_PAUSE=20

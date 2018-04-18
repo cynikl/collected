@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ##Kills the client, removes all FileWave software (including the catalog and anything inactive)
 ##The system will stay in its current state, FW will no longer have control over any files.

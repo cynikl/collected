@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 printf "Content-Type: text/html\r\n"
 printf "X-Test: test\r\n"

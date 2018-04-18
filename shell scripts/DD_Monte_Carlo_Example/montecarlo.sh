@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ITERATIONS=1000
 SCALE=6

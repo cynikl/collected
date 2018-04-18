@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 PI=3.141592654
 RAD=7
 AREA=$(perl -e "print \"The value is \".($PI * ($RAD*$RAD)).\"\n\";")

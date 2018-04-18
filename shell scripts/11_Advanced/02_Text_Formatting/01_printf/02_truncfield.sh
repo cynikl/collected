@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 TEXT="This is a test, this is only a test."
 
