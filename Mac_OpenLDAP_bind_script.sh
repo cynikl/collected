@@ -1,11 +1,11 @@
 #!/bin/bash
 # rtrouton's Mac_OpenLDAP_bind_script.sh
-# taken frmo his Github.
+# taken from his Github.
 # Determine OS version
 osvers=$(sw_vers -productVersion | awk -F. '{print $2}')
 
 # Environment settings
-oddomain="centos.murkhapandita.org" 	# Fully qualified DNS of your LDAP server
+oddomain="centos.changeit.org" 	# Fully qualified DNS of your LDAP server
 domain="addomain.org"            	# Fully qualified DNS name of Active Directory Domain
 domainname="DOMAIN"             	# Name of the Domain as specified in the search paths
 
@@ -14,10 +14,10 @@ domainname="DOMAIN"             	# Name of the Domain as specified in the search
 # If you are adapting this for your own use, run a 
 # search and replace for the following:
 #
-# "dc=murkhapandita,dc=org" (no quotes)
+# "dc=changeit,dc=org" (no quotes)
 # You'll need to replace that with your own LDAP search base
 #
-# "centos.murkhapandita.org" (no quotes)
+# "centos.changeit.org" (no quotes)
 # You'll need to replace that with the
 # fully qualified domain name of your
 # OpenLDAP server
@@ -215,7 +215,7 @@ if [[ ${osvers} -lt 7 ]]; then
 								<string>shadowAccount</string>
 							</array>
 							<key>Search Base</key>
-							<string>dc=murkhapandita,dc=org</string>
+							<string>dc=changeit,dc=org</string>
 						</dict>
 					</array>
 					<key>Standard Name</key>
@@ -259,7 +259,7 @@ if [[ ${osvers} -lt 7 ]]; then
 								<string>posixGroup</string>
 							</array>
 							<key>Search Base</key>
-							<string>dc=murkhapandita,dc=org</string>
+							<string>dc=changeit,dc=org</string>
 						</dict>
 					</array>
 					<key>Standard Name</key>
@@ -319,7 +319,7 @@ if [[ ${osvers} -lt 7 ]]; then
 								<string>mount</string>
 							</array>
 							<key>Search Base</key>
-							<string>dc=murkhapandita,dc=org</string>
+							<string>dc=changeit,dc=org</string>
 						</dict>
 					</array>
 					<key>Standard Name</key>
@@ -531,7 +531,7 @@ if [[ ${osvers} -lt 7 ]]; then
 								<string>inetOrgPerson</string>
 							</array>
 							<key>Search Base</key>
-							<string>dc=murkhapandita,dc=org</string>
+							<string>dc=changeit,dc=org</string>
 						</dict>
 					</array>
 					<key>Standard Name</key>
@@ -591,7 +591,7 @@ if [[ ${osvers} -lt 7 ]]; then
 								<string>certificationAuthority</string>
 							</array>
 							<key>Search Base</key>
-							<string>dc=murkhapandita,dc=org</string>
+							<string>dc=changeit,dc=org</string>
 						</dict>
 					</array>
 					<key>Standard Name</key>
@@ -627,7 +627,7 @@ if [[ ${osvers} -lt 7 ]]; then
 								<string>automountMap</string>
 							</array>
 							<key>Search Base</key>
-							<string>dc=murkhapandita,dc=org</string>
+							<string>dc=changeit,dc=org</string>
 						</dict>
 					</array>
 					<key>Standard Name</key>
@@ -671,7 +671,7 @@ if [[ ${osvers} -lt 7 ]]; then
 								<string>automount</string>
 							</array>
 							<key>Search Base</key>
-							<string>dc=murkhapandita,dc=org</string>
+							<string>dc=changeit,dc=org</string>
 						</dict>
 					</array>
 					<key>Standard Name</key>
@@ -683,7 +683,7 @@ if [[ ${osvers} -lt 7 ]]; then
 			<key>Search Timeout in seconds</key>
 			<integer>120</integer>
 			<key>Server</key>
-			<string>centos.murkhapandita.org</string>
+			<string>centos.changeit.org</string>
 			<key>Server Mappings</key>
 			<false/>
 			<key>Supported Security Level</key>
@@ -700,11 +700,11 @@ if [[ ${osvers} -lt 7 ]]; then
 			<key>Template Name</key>
 			<string>RFC 2307 (Unix)</string>
 			<key>Template Search Base Suffix</key>
-			<string>dc=murkhapandita,dc=org</string>
+			<string>dc=changeit,dc=org</string>
 			<key>Template Version</key>
 			<string>10.4</string>
 			<key>UI Name</key>
-			<string>centos.murkhapandita.org</string>
+			<string>centos.changeit.org</string>
 			<key>Use DNS replicas</key>
 			<false/>
 		</dict>
@@ -750,7 +750,7 @@ if [[ ${osvers} -ge 7 ]]; then
 <plist version="1.0">
 <dict>
 	<key>description</key>
-	<string>centos.murkhapandita.org</string>
+	<string>centos.changeit.org</string>
 	<key>mappings</key>
 	<dict>
 		<key>template</key>
@@ -776,13 +776,13 @@ if [[ ${osvers} -ge 7 ]]; then
 			<key>LDAP Referrals</key>
 			<true/>
 			<key>Template Search Base Suffix</key>
-			<string>dc=murkhapandita,dc=org</string>
+			<string>dc=changeit,dc=org</string>
 			<key>Use DNS replicas</key>
 			<false/>
 		</dict>
 	</dict>
 	<key>node name</key>
-	<string>/LDAPv3/centos.murkhapandita.org</string>
+	<string>/LDAPv3/centos.changeit.org</string>
 	<key>options</key>
 	<dict>
 		<key>connection idle disconnect</key>
@@ -792,7 +792,7 @@ if [[ ${osvers} -ge 7 ]]; then
 		<key>destination</key>
 		<dict>
 			<key>host</key>
-			<string>centos.murkhapandita.org</string>
+			<string>centos.changeit.org</string>
 			<key>other</key>
 			<string>ldap</string>
 			<key>port</key>
@@ -835,7 +835,7 @@ sleep 5
 if [[ ${osvers} -ge 7 ]]; then
     echo "Removing previous bindings"
     dscl localhost -delete Search CSPSearchPath '/Active Directory/DOMAIN/All Domains'
-    dscl localhost -merge Search CSPSearchPath '/LDAPv3/centos.murkhapandita.org'
+    dscl localhost -merge Search CSPSearchPath '/LDAPv3/centos.changeit.org'
 
 # Even if using All Domains, you need to add '/Active Directory/DOMAIN'
 # to the authentication search path
@@ -854,7 +854,7 @@ fi
 if [[ ${osvers} -lt 7 ]]; then
   echo "Removing AD binding"
   dscl localhost -delete Search CSPSearchPath '/Active Directory/All Domains'
-  dscl localhost -merge Search CSPSearchPath '/LDAPv3/centos.murkhapandita.org'
+  dscl localhost -merge Search CSPSearchPath '/LDAPv3/centos.changeit.org'
   dscl localhost -merge Search CSPSearchPath '/Active Directory/All Domains'
   echo "Killing DirectoryService"
   killall DirectoryService
